@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "news"
+    label: "Νέα"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { label: "Τίτλος", name: "title", widget: "string" }
+      - { label: "Ημερομηνία", name: "date", widget: "datetime" }
+      - { label: "Εικόνα", name: "image", widget: "image" }
+      - { label: "Κείμενο", name: "body", widget: "markdown" }
+
+  - name: "matches"
+    label: "Αγώνες"
+    folder: "content/matches"
+    create: true
+
+    fields:
+      - { label: "Αντίπαλος", name: "opponent", widget: "string" }
+      - { label: "Ημερομηνία", name: "date", widget: "datetime" }
+      - { label: "Έδρα", name: "venue", widget: "string" }
+
+  - name: "sponsors"
+    label: "Χορηγοί"
+    folder: "content/sponsors"
+    create: true
+
+    fields:
+      - { label: "Όνομα", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
